@@ -1,6 +1,7 @@
 package au.gov.dva.mailroom.thesaurus.loader.model;
 
 
+import java.util.Objects;
 import java.util.UUID;
 
 public class Student {
@@ -45,6 +46,23 @@ public class Student {
 
     public String getEmail() {
         return email;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Student student = (Student) o;
+        return Objects.equals(studentId, student.studentId) &&
+                Objects.equals(firstName, student.firstName) &&
+                Objects.equals(lastName, student.lastName) &&
+                Objects.equals(email, student.email) &&
+                gender == student.gender;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(studentId, firstName, lastName, email, gender);
     }
 
     public Gender getGender() {
