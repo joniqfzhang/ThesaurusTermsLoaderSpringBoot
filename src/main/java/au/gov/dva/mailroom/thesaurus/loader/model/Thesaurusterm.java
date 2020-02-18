@@ -36,9 +36,12 @@ public class Thesaurusterm {
 	public void setThesaurustermList(List<Thesaurusterm> thesaurusterms) {
 		this.thesaurustermList = thesaurusterms;
 	}
+
 	@Override
 	public String toString() {
-		return "Thesaurusterm [name=" + name + ", thesaurustermList=" + thesaurustermList + "]";
+		return "Thesaurusterm{" +
+				"name='" + name + '\'' +
+				", thesaurustermList=" + thesaurustermList +
+				'}';
 	}
-		
 }
